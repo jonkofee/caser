@@ -42,7 +42,7 @@ func TestUpperCamelToSnakeStartWithNumber(t *testing.T) {
 
 func TestLowerCamelToSnakeStartWithNumber(t *testing.T) {
 	result := caser.CamelToSnake("15updatedAt420")
-	if caser.CamelToSnake("15updatedAt420") != "15_updated_at_420" {
+	if caser.CamelToSnake("15updatedAt420") != "15updated_at_420" {
 		t.Error("Incorrect lowerCamelCase to snake_case with number in begin, got ", result)
 	}
 }
@@ -56,7 +56,7 @@ func TestUpperCamelToSnakeWithNumberInMiddle(t *testing.T) {
 
 func TestLowerCamelToSnakeWithNumberInMiddle(t *testing.T) {
 	result := caser.CamelToSnake("15updated8At420")
-	if caser.CamelToSnake("15updated8At420") != "15_updated_8_at_420" {
+	if caser.CamelToSnake("15updated8At420") != "15updated_8_at_420" {
 		t.Error("Incorrect lowerCamelCase to snake_case with number in middle, got ", result)
 	}
 }

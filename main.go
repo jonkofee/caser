@@ -15,11 +15,7 @@ func CamelToSnake(str string) string  {
 	for index, char := range str {
 		if index == 0 {
 			char = unicode.ToLower(char)
-		}
-
-		if unicode.IsUpper(char) ||
-			(unicode.IsNumber(char) && prevChar != 0 && !unicode.IsNumber(prevChar)) ||
-			(unicode.IsLetter(char) && prevChar != 0 && unicode.IsNumber(prevChar)) {
+		} else if index > 0 && (unicode.IsUpper(char) || (unicode.IsNumber(char) && !unicode.IsNumber(prevChar))) {
 			words = append(words, temp)
 
 			temp = ""

@@ -60,3 +60,17 @@ func TestLowerCamelToSnakeWithNumberInMiddle(t *testing.T) {
 		t.Error("Incorrect lowerCamelCase to snake_case with number in middle, got ", result)
 	}
 }
+
+func TestLowerCamelToSnakeSingleChar(t *testing.T) {
+	result := caser.CamelToSnake("a")
+	if caser.CamelToSnake("a") != "a" {
+		t.Error("Incorrect lowerCamelCase to snake_case with single char, got ", result)
+	}
+}
+
+func TestUpperCamelToSnakeSingleChar(t *testing.T) {
+	result := caser.CamelToSnake("A")
+	if caser.CamelToSnake("A") != "a" {
+		t.Error("Incorrect lowerCamelCase to snake_case with single char, got ", result)
+	}
+}

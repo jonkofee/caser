@@ -14,63 +14,63 @@ func TestUpperCamelToSnake(t *testing.T) {
 
 func TestLowerCamelToSnake(t *testing.T) {
 	result := caser.CamelToSnake("updatedAt")
-	if caser.CamelToSnake("updatedAt") != "updated_at" {
+	if result != "updated_at" {
 		t.Error("Incorrect lowerCamelCase to snake_case, got ", result)
 	}
 }
 
 func TestUpperCamelToSnakeWithNumber(t *testing.T) {
 	result := caser.CamelToSnake("UpdatedAt420")
-	if caser.CamelToSnake("UpdatedAt420") != "updated_at_420" {
+	if result != "updated_at_420" {
 		t.Error("Incorrect UpperCamelCase to snake_case with number in end, got ", result)
 	}
 }
 
 func TestLowerCamelToSnakeWithNumber(t *testing.T) {
 	result := caser.CamelToSnake("updatedAt420")
-	if caser.CamelToSnake("updatedAt420") != "updated_at_420" {
+	if result != "updated_at_420" {
 		t.Error("Incorrect lowerCamelCase to snake_case with number in end, got ", result)
 	}
 }
 
 func TestUpperCamelToSnakeStartWithNumber(t *testing.T) {
 	result := caser.CamelToSnake("15UpdatedAt420")
-	if caser.CamelToSnake("15UpdatedAt420") != "15_updated_at_420" {
+	if result != "15_updated_at_420" {
 		t.Error("Incorrect UpperCamelCase to snake_case with number in begin, got ", result)
 	}
 }
 
 func TestLowerCamelToSnakeStartWithNumber(t *testing.T) {
 	result := caser.CamelToSnake("15updatedAt420")
-	if caser.CamelToSnake("15updatedAt420") != "15updated_at_420" {
+	if result != "15updated_at_420" {
 		t.Error("Incorrect lowerCamelCase to snake_case with number in begin, got ", result)
 	}
 }
 
 func TestUpperCamelToSnakeWithNumberInMiddle(t *testing.T) {
 	result := caser.CamelToSnake("15UpdatedAt420")
-	if caser.CamelToSnake("15UpdatedAt420") != "15_updated_at_420" {
+	if result != "15_updated_at_420" {
 		t.Error("Incorrect UpperCamelCase to snake_case with number in middle, got ", result)
 	}
 }
 
 func TestLowerCamelToSnakeWithNumberInMiddle(t *testing.T) {
 	result := caser.CamelToSnake("15updated8At420")
-	if caser.CamelToSnake("15updated8At420") != "15updated_8_at_420" {
+	if result != "15updated_8_at_420" {
 		t.Error("Incorrect lowerCamelCase to snake_case with number in middle, got ", result)
 	}
 }
 
 func TestLowerCamelToSnakeSingleChar(t *testing.T) {
 	result := caser.CamelToSnake("a")
-	if caser.CamelToSnake("a") != "a" {
+	if result != "a" {
 		t.Error("Incorrect lowerCamelCase to snake_case with single char, got ", result)
 	}
 }
 
 func TestUpperCamelToSnakeSingleChar(t *testing.T) {
 	result := caser.CamelToSnake("A")
-	if caser.CamelToSnake("A") != "a" {
+	if result != "a" {
 		t.Error("Incorrect lowerCamelCase to snake_case with single char, got ", result)
 	}
 }

@@ -1,4 +1,4 @@
-package caser
+package main
 
 import (
 	"strings"

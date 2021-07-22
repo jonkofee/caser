@@ -74,3 +74,17 @@ func TestUpperCamelToSnakeSingleChar(t *testing.T) {
 		t.Error("Incorrect lowerCamelCase to snake_case with single char, got ", result)
 	}
 }
+
+func TestLowerCamelToSnakeWithUpperWord(t *testing.T) {
+	result := caser.CamelToSnake("reserveUSD")
+	if result != "reserve_usd" {
+		t.Error("Incorrect lowerCamelCase to snake_case with upper word, got ", result)
+	}
+}
+
+func TestUpperCamelToSnakeWithUpperWord(t *testing.T) {
+	result := caser.CamelToSnake("ReserveUSD")
+	if result != "reserve_usd" {
+		t.Error("Incorrect lowerCamelCase to snake_case with upper word, got ", result)
+	}
+}

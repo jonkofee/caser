@@ -9,21 +9,18 @@ func CamelToSnake(str string) string  {
 	var (
 		words []string
 		temp string
-		prevChar rune
 	)
 
 	for index, char := range str {
-		if index == 0 {
-			char = unicode.ToLower(char)
-		} else if index > 0 && (unicode.IsUpper(char) || (unicode.IsNumber(char) && !unicode.IsNumber(prevChar))) {
+		if index > 0 &&
+			((unicode.IsUpper(char) && (unicode.IsLower(rune(str[index - 1])) || unicode.IsNumber(rune(str[index - 1])))) ||
+			(unicode.IsNumber(char) && !unicode.IsNumber(rune(str[index - 1])))) {
 			words = append(words, temp)
 
 			temp = ""
 		}
 
 		temp += string(unicode.ToLower(char))
-
-		prevChar = char
 	}
 
 	words = append(words, temp)
